@@ -1,0 +1,19 @@
+{
+  "name": "ec2buildimage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "shelljs": "^0.8.5"
+  },
+  "devDependencies": {
+    "@types/shelljs": "^0.8.14"
+  }
+}

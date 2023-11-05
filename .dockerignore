@@ -1,0 +1,15 @@
+.gitignore
+.git
+.dockerignore
+.dist.do
+node_modules
+dist
+
+.eslintrc.js
+.prettierrc
+README.md
+.env
+
+.turbo
+
+
