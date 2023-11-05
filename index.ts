@@ -3,11 +3,14 @@ import { exec } from "child_process";
 const app = express();
 const port = 80;
 
+app.get('/', (req: any, res: any) => {
+  res.send('Hello World! from EC2');
+});
 app.get('/triggerBuild', (req: any, res: any) => {
 
   const website = 'judith.ctunnels.com';
   const webdir = `/mnt/static-cdn/clients/clients-mono/sites/${website}`;
-  const image = 'your-docker-image-name';  // replace with your image name
+  const image = 'builder-image:latest';  // replace with your image name
 
   const command = `
       docker run --rm ${image} sh -c "cd ${webdir} && npm run build"
