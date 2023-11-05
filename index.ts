@@ -10,7 +10,7 @@ app.get('/triggerBuild', (req: any, res: any) => {
 
   const website = 'judith.ctunnels.com';
   const webdir = `/mnt/static-cdn/clients/clients-mono/sites/${website}`;
-  const image = 'builder-image:latest';  // replace with your image name
+  const image = 'builder-image';  // replace with your image name
 
   const command = `
       docker run --rm ${image} sh -c "cd ${webdir} && npm run build"
