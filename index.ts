@@ -16,7 +16,7 @@ app.get('/triggerBuild', (req: any, res: any) => {
 
   const bashScript = `
         #!/bin/bash
-        sudo docker run --rm -v ${webdir}:${webdir} ${image} sh -c "cd ${webdir} && npm run build"
+        sudo docker run --rm -v ${webdir}:/app ${image} sh -c "cd app && npm run build"
     `;
 
   const scriptPath = `${webdir}/buildScript.sh`;
