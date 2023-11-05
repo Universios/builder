@@ -12,9 +12,12 @@ app.get('/triggerBuild', (req: any, res: any) => {
   const webdir = `/mnt/static-cdn/clients/clients-mono/sites/${website}`;
   const image = '265076617171.dkr.ecr.eu-central-1.amazonaws.com/builder-image:latest';  // replace with your image name
 
+  // const command = `
+  //   sudo docker run --rm ${image} sh -c "cd ${webdir} && sudo npm run build"
+  //   `;
   const command = `
-    sudo docker run --rm ${image} sh -c "cd ${webdir} && sudo npm run build"
-    `;
+  sudo docker run --rm -v ${webdir}:${webdir} ${image} sh -c "cd ${webdir} && npm run build"
+`;
 
   exec(command, (err, stdout, stderr) => {
     if (err) {
